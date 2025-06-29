@@ -27,6 +27,7 @@
       position: sticky;
       top: 0;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       z-index: 10;
     }
@@ -35,6 +36,7 @@
       color: white;
       padding: 15px 20px;
       text-decoration: none;
+      display: inline-block;
     }
 
     nav a:hover { background-color: #555; }
@@ -64,9 +66,9 @@
 
     .home img {
       display: block;
-      margin: 30px auto;
-      width: 90%;
-      max-width: 1000px;
+      margin: 30px auto 0;
+      max-width: 90%;
+      width: 100%;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
@@ -123,6 +125,34 @@
       text-align: center;
       padding: 20px;
       margin-top: 40px;
+    }
+
+    /* ✅ Media query para celulares */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .home img {
+        max-width: 95%;
+      }
+
+      .btn-contacto {
+        width: 100%;
+        padding: 14px;
+        font-size: 18px;
+      }
+
+      section {
+        padding: 40px 15px;
+      }
     }
   </style>
 </head>
